@@ -1,0 +1,18 @@
+<div class="row p-5">
+  <h2 class="my-4 fw-bolder">A list of <span class="change"> movies </span> ordered by rating  <button (click)="chan()" class="btn btn-outline-info"><i class="fa-solid fa-sync fa-spin"></i></button></h2>
+
+  <div class="col-md-3 my-3" *ngFor="let movie of moviesRated">
+    <div class="movie position-relative">
+      <img class="w-100" [src]="posterPrefix+movie.poster_path" alt="img films">
+      <div class="vote p-2" [ngClass]="{
+        'bg-danger':movie.vote_average<5,
+        'bg-primary':movie.vote_average<8,
+        'bg-warning':movie.vote_average>8
+      }">
+        <h6>{{movie.vote_average.toFixed(1)}}</h6>
+      </div>
+      <h5 class="fw-bold text-center my-2">{{movie.title}}</h5>
+      <p class="mt-2 text-black">{{movie.overview|cutTitle:80}}</p>
+    </div>
+  </div>
+</div>

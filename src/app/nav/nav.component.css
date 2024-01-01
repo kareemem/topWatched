@@ -1,0 +1,10 @@
+.bg-body-tertiary
+{
+  background-color: rgb(12, 48, 167) !important;
+}
+.navActive{
+  font-weight: 600;
+  border: 1mm ridge rgba(238, 240, 211, 0.6);
+  background-color: white;
+  color: black !important;
+}

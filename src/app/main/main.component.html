@@ -1,0 +1,94 @@
+<h3 class="my-5 text-center fw-bold">Welcome to <span class="text-white">Top Watched </span> to nominate the best
+  <br>films and series during this day and month</h3>
+<div class="row p-5">
+  <div class="col-12">
+    <div class="d-flex justify-content-between">
+      <h6 class="fw-bold">Top 10 Rated Films </h6>
+      <a routerLink="/topRated">See More...</a>
+    </div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let movie of moviesRated.slice(0,10)">
+      <ng-template carouselSlide>
+        <img class="w-100" [src]="posterPrefix+movie.poster_path" alt="img films" >
+        <h5 class="fw-bold text-center my-2 text-black">{{movie.title}}</h5>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  </div>
+
+  <div class="col-12 mt-4">
+    <div class="d-flex justify-content-between">
+      <h6 class="fw-bold">Top 10 Rated TVSeries </h6>
+      <a routerLink="/topRated">See More...</a>
+    </div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let movie of tvRated.slice(0,10)">
+      <ng-template carouselSlide>
+        <img class="w-100" [src]="posterPrefix+movie.poster_path" alt="img films" >
+        <h5 class="fw-bold text-center my-2 text-black">{{movie.name}}</h5>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  </div>
+
+
+  <div class="col-12 mt-4">
+    <div class="d-flex justify-content-between">
+      <h6 class="fw-bold">Top 10 Films in month</h6>
+      <a routerLink="/movies">See More...</a>
+    </div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let movie of trendingWeekMovies.slice(0,10)">
+      <ng-template carouselSlide>
+        <img class="w-100" [src]="posterPrefix+movie.poster_path" alt="img films" >
+        <h5 class="fw-bold text-center my-2 text-black">{{movie.title}}</h5>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  </div>
+  <div class="col-12 mt-4">
+    <div class="d-flex justify-content-between">
+      <h6 class="fw-bold">Top 10 Films in day</h6>
+      <a routerLink="/movies">See More...</a>
+    </div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let movie of trendingDayMovies.slice(0,10)">
+      <ng-template carouselSlide>
+        <img class="w-100" [src]="posterPrefix+movie.poster_path" alt="img films" >
+        <h5 class="fw-bold text-center my-2 text-black">{{movie.title}}</h5>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  </div>
+  <div class="col-12 mt-4">
+    <div class="d-flex justify-content-between">
+      <h6 class="fw-bold">Top 10 TVSeries in week</h6>
+      <a routerLink="/series">See More...</a>
+    </div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let series of trendingWeekSeries.slice(0,10)">
+      <ng-template carouselSlide>
+        <img class="w-100" [src]="posterPrefix+series.poster_path" alt="img films" >
+        <h5 class="fw-bold text-center my-2 text-black">{{series.name}}</h5>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  </div>
+  <div class="col-12 mt-4">
+    <div class="d-flex justify-content-between">
+      <h6 class="fw-bold">Top 10 TVSeries in day</h6>
+      <a routerLink="/series">See More...</a>
+    </div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let series of trendingDaySeries.slice(0,10)">
+      <ng-template carouselSlide>
+        <img class="w-100" [src]="posterPrefix+series.poster_path" alt="img films" >
+        <h5 class="fw-bold text-center my-2 text-black">{{series.name}}</h5>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  </div>
+  <div class="col-12 mt-4">
+    <app-now-playing></app-now-playing>
+  </div>
+</div>
